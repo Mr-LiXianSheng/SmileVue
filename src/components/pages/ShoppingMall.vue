@@ -77,8 +77,8 @@
   }
 
   .swiper-area {
-    max-width: 20rem;
+    max-height: 13rem;
     overflow: hidden;
-    clear: both;
+    clear: both; //清除左右两边浮动
   }
 </style>
