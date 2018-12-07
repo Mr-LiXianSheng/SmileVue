@@ -1,8 +1,8 @@
 <template>
   <div>
+    <!--head-->
     <div class="search-bar">
       <van-row>
-
         <van-col span="3">
           <img :src="locationIcon" alt="" width="68%" class="location-icon">
         </van-col>
@@ -14,9 +14,18 @@
         <van-col span="5">
           <van-button size="mini" class="search-button">查找</van-button>
         </van-col>
-
       </van-row>
     </div>
+
+    <!--swipwer area-->
+    <div class="swiper-area">
+      <van-swipe :autoplay="3000" indicator-color="white">
+        <van-swipe-item v-for="(image,index) in bannerImages" :key="index">
+          <img v-lazy="image.imageUrl" width="100%"/>
+        </van-swipe-item>
+      </van-swipe>
+    </div>
+
   </div>
 </template>
 
@@ -25,7 +34,13 @@
     data() {
       return {
         msg: "Shopping Mall",
-        locationIcon: require("../../assets/images/location.png")
+
+        locationIcon: require("../../assets/images/location.png"),
+        bannerImages: [
+          {imageUrl: require("../../assets/images/simleVueDemoPic001.jpg")},
+          {imageUrl: require("../../assets/images/simleVueDemoPic002.jpg")},
+          {imageUrl: require("../../assets/images/simleVueDemoPic003.jpg")},
+        ]
       };
     }
   };
@@ -37,12 +52,13 @@
     height: 2.2rem;
     background-color: #e5017d;
     line-height: 2.2rem;
+    overflow: hidden;
 
-    .location-icon{
-      padding: .2rem 0 0 .3rem;
+    .location-icon {
+      padding: .3rem 0 0 .3rem;
     }
 
-    .search-input{
+    .search-input {
       width: 100%;
       height: 1.3rem;
       border: 0;
@@ -51,12 +67,18 @@
       border-bottom: 1px solid #fff !important;
       background-color: #e5017d;
       color: #fff;
-      outline:none;
+      outline: none;
     }
 
-    .search-button{
+    .search-button {
       margin-left: .8rem;
     }
 
+  }
+
+  .swiper-area {
+    max-width: 20rem;
+    overflow: hidden;
+    clear: both;
   }
 </style>
