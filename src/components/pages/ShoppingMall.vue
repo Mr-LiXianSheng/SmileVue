@@ -61,6 +61,20 @@
     <!-- 楼层3 -->
     <floorComponent :floorData="floor3" :floorTitle="floorName.floor3"/>
 
+    <!--Hot Area-->
+    <div class="hot-area">
+      <div class="hot-title">---- 热卖商品 ----</div>
+      <div class="hot-goods">
+        <van-list>
+          <van-row>
+            <van-col span="12" v-for="( item, index) in hotGoods" :key="index">
+              <goodsInfo :goodsImage="item.image" :goodsName="item.name" :goodsPrice="item.price"/>
+            </van-col>
+          </van-row>
+        </van-list>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -70,6 +84,8 @@
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
   import floorComponent from '../component/floorComponent'
   import {toMoney} from '@/filter/moneyFilter.js'
+  import goodsInfo from '../component/goodsInfoComponent'
+  import url from '@/serviceAPI.config.js'
 
   export default {
     name: 'ShoppingMall',
@@ -87,7 +103,8 @@
         floor1: [], //楼层1的数据
         floor2: [], //楼层2的数据
         floor3: [], //楼层3的数据
-        floorName: {} //楼层名称
+        floorName: {}, //楼层名称
+        hotGoods: [] //热卖商品
       };
     },
 
@@ -102,14 +119,15 @@
     components: {
       swiper,
       swiperSlide,
-      floorComponent
+      floorComponent,
+      goodsInfo
     },
 
     // 在模板渲染成html或者模板编译进路由前调用created
     created() {
       // 通过axios.get请求数据
       this.axios
-        .get("https://easy-mock.com/mock/5c0bd2cceb6e81403eb29d84/SmileVue/index")
+        .get(url.getShoppingMallInfo)
         // 请求成功
         .then(response => {
           // console.log(response);
@@ -124,6 +142,7 @@
             this.floor2 = response.data.data.floor2;
             this.floor3 = response.data.data.floor3;
             this.floorName = response.data.data.floorName;
+            this.hotGoods = response.data.data.hotGoods;
           }
         })
         // 请求错误
@@ -135,14 +154,25 @@
 </script>
 
 <style scoped lang="less">
+
+  .hot-area {
+    text-align: center;
+    font-size: 14px;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    color: #E20318;
+  }
+
   .search-bar {
+    position: fixed;
+    z-index: 99;
     height: 2.2rem;
     background-color: #e5017d;
     line-height: 2.2rem;
     overflow: hidden;
 
     .location-icon {
-      padding: 0.3rem 0 0 0.3rem;
+      padding: 0 0 0 0.3rem;
     }
 
     .search-input {
@@ -163,6 +193,7 @@
   }
 
   .swiper-area {
+    padding-top: 2.2rem;
     max-height: 13rem;
     overflow: hidden;
     clear: both; //清除左右两边浮动
