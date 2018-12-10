@@ -3,9 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {Button, Row, Col} from 'vant';
+import '@/assets/css/reset.css' // 引入公共样式
 
-Vue.use(Button).use(Row).use(Col);
+// axios请求插件
+import axios from "axios"
+Vue.prototype.axios = axios
+
+// Vant有赞
+import {Button, Row, Col, Swipe, SwipeItem, Lazyload} from 'vant';
+Vue.use(Button).use(Row).use(Col).use(Swipe).use(SwipeItem).use(Lazyload);
 
 Vue.config.productionTip = false;
 
