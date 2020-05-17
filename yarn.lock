@@ -9,12 +9,12 @@
   dependencies:
     "@babel/types" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.5":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
-  integrity sha512-oouEibCbHMVdZSDlJBO6bZmID/zA/G/Qx3H1d3rSNPTD+L8UNKvCat7aKWSJ74zYbm5zWGh0GQN0hKj8zYFTCg==
+"@babel/runtime@7.x", "@babel/runtime@^7.0.0":
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
+  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
   dependencies:
-    regenerator-runtime "^0.12.0"
+    regenerator-runtime "^0.13.4"
 
 "@babel/types@^7.0.0":
   version "7.2.0"
@@ -24,6 +24,16 @@
     esutils "^2.0.2"
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
+
+"@vant/icons@1.1.13":
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.13.tgz#ea77298f4f2b19ccc761005068a2c7436098e4d4"
+  integrity sha512-r2EoKDQ4Xh82fo5jVY/m/+LZFfRhHp+ViagySExzlJ7t6JFtmK1OqB6HdFkXXbfEzB/48BvGoPVifFoYzke6KQ==
+
+"@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0.tgz#048fe579958da408fb7a8b2a3ec050b50a661040"
+  integrity sha512-6tyf5Cqm4m6v7buITuwS+jHzPlIPxbFzEhXR5JGZpbrvOcp1hiQKckd305/3C7C36wFekNTQSxAtgeM0j0yoUw==
 
 abbrev@1:
   version "1.1.1"
@@ -5487,10 +5497,10 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
-regenerator-runtime@^0.12.0:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
-  integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+regenerator-runtime@^0.13.4:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
+  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
 
 regenerator-transform@^0.10.0:
   version "0.10.1"
@@ -6602,12 +6612,14 @@ vant-weapp@^0.4.8:
   resolved "https://registry.yarnpkg.com/vant-weapp/-/vant-weapp-0.4.9.tgz#c191319a7c35d3ce5cc338203f9dcbb86af2c0a9"
   integrity sha512-Y9eiVeEaBIybsQ04G4rQtaChvUuOQ7GDnb0teWkhLk6fQOts9KgT9cZWwFnA6TEsz8jqnC/22hfRNCk6Nx9vOA==
 
-vant@^1.4.8:
-  version "1.4.8"
-  resolved "https://registry.yarnpkg.com/vant/-/vant-1.4.8.tgz#6e1e23715dc206986fd812338677d55e3e861adc"
-  integrity sha512-SYGd2l16y+gSkB3WfU6wvTOxKvdjy2rTqYM4YHMCr4bLhEp+CbX9ohpDPsZAfpgZFWhFG9joHEvWims5BV6AeQ==
+vant@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/vant/-/vant-2.1.8.tgz#38cb5ac8cf6a78805ece57d4b278584f7d13cd47"
+  integrity sha512-mF0ivFVfbErsEtTYqDt2URNXRZi6JpOwPI+0WFgjRP23cktrew6cScuaqy3pEYXfJqxLgMwk2ehzCHat67x0XA==
   dependencies:
-    "@babel/runtime" "^7.1.5"
+    "@babel/runtime" "7.x"
+    "@vant/icons" "1.1.13"
+    "@vue/babel-helper-vue-jsx-merge-props" "^1.0.0"
     vue-lazyload "1.2.3"
 
 vary@~1.1.2:
