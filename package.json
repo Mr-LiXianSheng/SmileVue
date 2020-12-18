@@ -13,7 +13,7 @@
     "axios": "^0.18.0",
     "init": "^0.1.2",
     "jshint": "^2.9.6",
-    "vant": "^1.4.8",
+    "vant": "^2.1.8",
     "vant-weapp": "^0.4.8",
     "vue": "^2.5.2",
     "vue-awesome-swiper": "^3.1.3",
