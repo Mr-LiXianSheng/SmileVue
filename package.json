@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "init": "^0.1.2",
     "jshint": "^2.9.6",
     "vant": "^1.4.8",
